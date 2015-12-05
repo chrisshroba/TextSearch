@@ -5,7 +5,7 @@
   "dependencies": {
     "fs-extra": "0.24.0",
     "mysql": "^2.9.0",
-    "sqlite3": "^3.1.1"
+    "sqlite3": "https://github.com/mapbox/node-sqlite3/tarball/master"
   },
   "devDependencies": {
     "electron-packager": "5.1.0",
@@ -19,9 +19,5 @@
   },
   "optionalDependencies": {
     "grunt-appdmg": "0.3.2"
-  },
-  "scripts": {
-    "postinstall": "npm run rebuild-sqlite3",
-    "rebuild-sqlite3": "cd node_modules/sqlite3 && npm run prepublish && node-gyp configure --module_name=node_sqlite3 --module_path=../lib/binding/node-v44-darwin-x64 && node-gyp rebuild --target=0.35.2 --arch=x64 --target_platform=darwin --dist-url=https://atom.io/download/atom-shell --module_name=node_sqlite3 --module_path=../lib/binding/node-v44-darwin-x64"
   }
 }
